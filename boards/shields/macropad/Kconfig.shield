@@ -1,4 +1,5 @@
-# Kconfig.shield
+# Copyright (c) 2024 Joshua Wiens
+# SPDX-License-Identifier: MIT
 
 config SHIELD_MACROPAD
     def_bool $(shields_list_contains,macropad)

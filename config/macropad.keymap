@@ -1,6 +1,6 @@
 /*
- * 4-button macropad keymap
- * Default layout with common shortcuts
+ * Copyright (c) 2024 Your Name
+ * SPDX-License-Identifier: MIT
  */
 
 #include <behaviors.dtsi>
