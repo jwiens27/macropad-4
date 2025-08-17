@@ -1,0 +1,11 @@
+# Kconfig.defconfig
+
+if SHIELD_MACROPAD
+
+config ZMK_KEYBOARD_NAME
+    default "Macropad 4K"
+
+config ZMK_BLE
+    default y
+
+endif
