@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Your Name
+ * Copyright (c) 2024 Joshua Wiens
  * SPDX-License-Identifier: MIT
  */
 
@@ -15,7 +15,7 @@
         compatible = "zmk,matrix-transform";
         columns = <2>;
         rows = <2>;
-        map = <
+        map = 
             RC(0,0) RC(0,1)
             RC(1,0) RC(1,1)
         >;
@@ -25,16 +25,16 @@
         compatible = "zmk,kscan-gpio-matrix";
         label = "KSCAN";
         
-        diode-direction = "col2row";
+        diode-direction = "row2col";  // CHANGED THIS
         
         col-gpios
-            = <&gpio0 17 GPIO_ACTIVE_HIGH>
-            , <&gpio0 20 GPIO_ACTIVE_HIGH>
+            = <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // ADDED PULL_DOWN
+            , <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // ADDED PULL_DOWN
             ;
             
         row-gpios
-            = <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            = <&gpio0 22 GPIO_ACTIVE_HIGH>  // REMOVED PULL_DOWN
+            , <&gpio0 24 GPIO_ACTIVE_HIGH>  // REMOVED PULL_DOWN
             ;
     };
 };
