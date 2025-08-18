@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Your Name
+ * Copyright (c) 2024 Joshua Wiens
  * SPDX-License-Identifier: MIT
  */
 
@@ -8,22 +8,60 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+    macros {
+        alt_24: alt_24 {
+            compatible = "zmk,behavior-macro";
+            label = "ALT_24";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LALT
+                &macro_tap &kp KP_N2 &kp KP_N4
+                &macro_release &kp LALT
+            >;
+        };
+        
+        alt_25: alt_25 {
+            compatible = "zmk,behavior-macro";
+            label = "ALT_25";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LALT
+                &macro_tap &kp KP_N2 &kp KP_N5
+                &macro_release &kp LALT
+            >;
+        };
+        
+        alt_26: alt_26 {
+            compatible = "zmk,behavior-macro";
+            label = "ALT_26";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LALT
+                &macro_tap &kp KP_N2 &kp KP_N6
+                &macro_release &kp LALT
+            >;
+        };
+        
+        alt_27: alt_27 {
+            compatible = "zmk,behavior-macro";
+            label = "ALT_27";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LALT
+                &macro_tap &kp KP_N2 &kp KP_N7
+                &macro_release &kp LALT
+            >;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
         
         default_layer {
             label = "DEFAULT";
             bindings = <
-                &kp A     &kp B
-                &kp C     &kp D
-            >;
-        };
-        
-        function_layer {
-            label = "FUNCTION";
-            bindings = <
-                &bt BT_CLR   &bt BT_SEL 0
-                &bt BT_SEL 1 &trans
+                &alt_24   &alt_25
+                &alt_26   &alt_27
             >;
         };
     };
