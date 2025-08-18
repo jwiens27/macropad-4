@@ -21,11 +21,14 @@
         >;
     };
 
-    kscan0: kscan_0 {
+kscan0: kscan_0 {
     compatible = "zmk,kscan-gpio-matrix";
     label = "KSCAN";
     
     diode-direction = "col2row";
+    poll-period-ms = <10>;  // Force 100Hz polling
+    debounce-press-ms = <5>;
+    debounce-release-ms = <5>;
     
     col-gpios
         = <&gpio0 17 GPIO_ACTIVE_HIGH>
@@ -36,5 +39,5 @@
         = <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
         , <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
         ;
-};
+    };
 };
